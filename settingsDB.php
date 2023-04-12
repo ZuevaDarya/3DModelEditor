@@ -1,6 +1,6 @@
 <?php
-    $host = 'localhost';
+    $host = '';
     $dbName = '3d_viewer';
-    $user = 'root';
+    $user = '';
     $password = '';     
 ?>
