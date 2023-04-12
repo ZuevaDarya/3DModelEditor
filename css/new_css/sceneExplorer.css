@@ -1,0 +1,869 @@
+#scene-explorer-host {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+#scene-explorer-host:focus {
+  outline: none;
+}
+
+#__resizable_base__ {
+  display: none;
+}
+
+.context-menu {
+  background: #222222;
+}
+
+.context-menu .react-contextmenu-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.context-menu .react-contextmenu-item:hover {
+  background: #555555;
+}
+
+.react-contextmenu.context-menu.react-contextmenu--visible {
+  z-index: 99;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+#sceneExplorer {
+  background: #333333;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+  font: 14px "Arial";
+}
+
+#sceneExplorer:focus {
+  outline: none;
+}
+
+#sceneExplorer #header {
+  height: 30px;
+  font-size: 16px;
+  color: white;
+  background: #222222;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30px 1fr 50px;
+      grid-template-columns: 30px 1fr 50px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#sceneExplorer #header #logo {
+  position: relative;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  width: 24px;
+  height: 24px;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  justify-self: center;
+}
+
+#sceneExplorer #header #title {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+#sceneExplorer #header #commands {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+#sceneExplorer #header #commands .expand {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  cursor: pointer;
+}
+
+#sceneExplorer #header #commands .close {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  cursor: pointer;
+}
+
+#sceneExplorer #tree {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#sceneExplorer .filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+#sceneExplorer .filter input {
+  width: 100%;
+  margin: 10px 40px 5px 40px;
+  display: block;
+  border: none;
+  padding: 0;
+  border-bottom: solid 1px #337ab7;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(96%, rgba(255, 255, 255, 0)), color-stop(4%, #337ab7));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #337ab7 4%);
+  background-position: -1000px 0;
+  background-size: 1000px 100%;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+#sceneExplorer .filter input::-webkit-input-placeholder {
+  color: lightgray;
+}
+
+#sceneExplorer .filter input:-ms-input-placeholder {
+  color: lightgray;
+}
+
+#sceneExplorer .filter input::-ms-input-placeholder {
+  color: lightgray;
+}
+
+#sceneExplorer .filter input::placeholder {
+  color: lightgray;
+}
+
+#sceneExplorer .filter input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  background-position: 0 0;
+}
+
+#sceneExplorer .groupContainer {
+  margin-left: 0px;
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-grid-row-align: center;
+      align-self: center;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .groupContainer:hover {
+  background: #444444;
+}
+
+#sceneExplorer .groupContainer .expandableHeader {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px;
+      grid-template-columns: 1fr 20px;
+}
+
+#sceneExplorer .groupContainer .expandableHeader .text {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20px 1fr;
+      grid-template-columns: 20px 1fr;
+}
+
+#sceneExplorer .groupContainer .expandableHeader .text .arrow {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  margin-left: 0px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 6px;
+  opacity: 0.5;
+}
+
+#sceneExplorer .groupContainer .expandableHeader .text .text-value {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .groupContainer .expandableHeader .expandAll {
+  opacity: 0.5;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  margin-right: 10px;
+}
+
+#sceneExplorer .icon {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  cursor: pointer;
+}
+
+#sceneExplorer .itemContainer {
+  margin-left: 0px;
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20px 1fr;
+      grid-template-columns: 20px 1fr;
+}
+
+#sceneExplorer .itemContainer:hover {
+  background: #444444;
+}
+
+#sceneExplorer .itemContainer.selected {
+  background: #bbbbbb;
+  color: black;
+}
+
+#sceneExplorer .itemContainer .isNotActive {
+  opacity: 0.3;
+}
+
+#sceneExplorer .itemContainer .arrow {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  color: white;
+  opacity: 0.6;
+}
+
+#sceneExplorer .itemContainer .popup {
+  width: 200px;
+  visibility: hidden;
+  background-color: #444444;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: absolute;
+  z-index: 1;
+  margin-left: -180px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#sceneExplorer .itemContainer .popup.show {
+  visibility: visible;
+}
+
+#sceneExplorer .itemContainer .popup:focus {
+  outline: none;
+}
+
+#sceneExplorer .itemContainer .popup .popupMenu {
+  padding: 6px 5px 5px 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 18px;
+}
+
+#sceneExplorer .itemContainer .popup .popupMenu:hover {
+  background: white;
+  color: #333333;
+}
+
+#sceneExplorer .itemContainer .sceneNode {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  margin-left: -10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px 20px 20px 20px 10px 20px 20px auto 5px;
+      grid-template-columns: 1fr 20px 20px 20px 20px 10px 20px 20px auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+#sceneExplorer .itemContainer .sceneNode .sceneTitle {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  margin-right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 24px;
+}
+
+#sceneExplorer .itemContainer .sceneNode .translation {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  opacity: 0.6;
+}
+
+#sceneExplorer .itemContainer .sceneNode .translation.selected {
+  opacity: 1;
+}
+
+#sceneExplorer .itemContainer .sceneNode .rotation {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  opacity: 0.6;
+}
+
+#sceneExplorer .itemContainer .sceneNode .rotation.selected {
+  opacity: 1;
+}
+
+#sceneExplorer .itemContainer .sceneNode .scaling {
+  -ms-grid-column: 4;
+  grid-column: 4;
+  opacity: 0.6;
+}
+
+#sceneExplorer .itemContainer .sceneNode .scaling.selected {
+  opacity: 1;
+}
+
+#sceneExplorer .itemContainer .sceneNode .bounding {
+  -ms-grid-column: 5;
+  grid-column: 5;
+  opacity: 0.6;
+}
+
+#sceneExplorer .itemContainer .sceneNode .bounding.selected {
+  opacity: 1;
+}
+
+#sceneExplorer .itemContainer .sceneNode .separator {
+  -ms-grid-column: 6;
+  grid-column: 6;
+  margin-left: 5px;
+  width: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 18px;
+  border-left: solid 1px #337ab7;
+}
+
+#sceneExplorer .itemContainer .sceneNode .pickingMode {
+  -ms-grid-column: 7;
+  grid-column: 7;
+  opacity: 0.6;
+}
+
+#sceneExplorer .itemContainer .sceneNode .pickingMode.selected {
+  opacity: 1;
+}
+
+#sceneExplorer .itemContainer .sceneNode .refresh {
+  -ms-grid-column: 8;
+  grid-column: 8;
+}
+
+#sceneExplorer .itemContainer .sceneNode .extensions {
+  width: 20px;
+  -ms-grid-column: 9;
+  grid-column: 9;
+}
+
+#sceneExplorer .itemContainer .targetedAnimationTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto 5px;
+      grid-template-columns: 1fr auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 0;
+}
+
+#sceneExplorer .itemContainer .targetedAnimationTools .extensions {
+  width: 20px;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .animationGroupTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto 5px;
+      grid-template-columns: 1fr auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 0;
+}
+
+#sceneExplorer .itemContainer .animationGroupTools .extensions {
+  width: 20px;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .soundTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto 5px;
+      grid-template-columns: 1fr auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 0;
+}
+
+#sceneExplorer .itemContainer .soundTools .extensions {
+  width: 20px;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .meshTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px 20px auto 5px;
+      grid-template-columns: 1fr 20px 20px auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 0;
+}
+
+#sceneExplorer .itemContainer .meshTools .bounding-box {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  opacity: 0.5;
+}
+
+#sceneExplorer .itemContainer .meshTools .bounding-box.selected {
+  opacity: 1;
+}
+
+#sceneExplorer .itemContainer .meshTools .visibility {
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+#sceneExplorer .itemContainer .meshTools .extensions {
+  width: 20px;
+  -ms-grid-column: 4;
+  grid-column: 4;
+}
+
+#sceneExplorer .itemContainer .cameraTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px 20px auto 5px;
+      grid-template-columns: 1fr 20px 20px auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .itemContainer .cameraTools .activeCamera {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .cameraTools .enableGizmo {
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+#sceneExplorer .itemContainer .cameraTools .extensions {
+  width: 20px;
+  -ms-grid-column: 4;
+  grid-column: 4;
+}
+
+#sceneExplorer .itemContainer .lightTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px 20px auto 5px;
+      grid-template-columns: 1fr 20px 20px auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .itemContainer .lightTools .enableLight {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .lightTools .extensions {
+  width: 20px;
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+#sceneExplorer .itemContainer .spriteTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto 5px;
+      grid-template-columns: 1fr auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .itemContainer .spriteTools .extensions {
+  width: 20px;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .spriteManagerTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto 5px;
+      grid-template-columns: 1fr auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .itemContainer .spriteManagerTools .extensions {
+  width: 20px;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .materialTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto 5px;
+      grid-template-columns: 1fr auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .itemContainer .materialTools .extensions {
+  width: 20px;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .materialTools .icon {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  cursor: pointer;
+}
+
+#sceneExplorer .itemContainer .particleSystemTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto 5px;
+      grid-template-columns: 1fr auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .itemContainer .particleSystemTools .extensions {
+  width: 20px;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .effectLayerTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto 5px;
+      grid-template-columns: 1fr auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .itemContainer .effectLayerTools .extensions {
+  width: 20px;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .postProcessTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto 5px;
+      grid-template-columns: 1fr auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .itemContainer .postProcessTools .extensions {
+  width: 20px;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .renderingPipelineTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto 5px;
+      grid-template-columns: 1fr auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .itemContainer .renderingPipelineTools .extensions {
+  width: 20px;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .textureTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto 5px;
+      grid-template-columns: 1fr auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .itemContainer .textureTools .extensions {
+  width: 20px;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .adtextureTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px 20px auto 5px;
+      grid-template-columns: 1fr 20px 20px auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .itemContainer .adtextureTools .edit {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .adtextureTools .pickingMode {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  opacity: 0.6;
+}
+
+#sceneExplorer .itemContainer .adtextureTools .pickingMode.selected {
+  opacity: 1;
+}
+
+#sceneExplorer .itemContainer .adtextureTools .extensions {
+  width: 20px;
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+#sceneExplorer .itemContainer .controlTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px 20px auto 5px;
+      grid-template-columns: 1fr 20px 20px auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .itemContainer .controlTools .highlight {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .controlTools .visibility {
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+#sceneExplorer .itemContainer .controlTools .extensions {
+  width: 20px;
+  -ms-grid-column: 4;
+  grid-column: 4;
+}
+
+#sceneExplorer .itemContainer .transformNodeTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto 5px;
+      grid-template-columns: 1fr auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .itemContainer .transformNodeTools .extensions {
+  width: 20px;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .skeletonTools {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto 5px;
+      grid-template-columns: 1fr auto 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#sceneExplorer .itemContainer .skeletonTools .extensions {
+  width: 20px;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#sceneExplorer .itemContainer .title {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  background: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 0;
+  margin-right: 5px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 25px 1fr;
+      grid-template-columns: 25px 1fr;
+  height: 24px;
+  cursor: pointer;
+}
+
+#sceneExplorer .itemContainer .title .titleIcon {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+#sceneExplorer .itemContainer .title .titleText {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

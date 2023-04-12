@@ -1,0 +1,223 @@
+#bottom-bar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+  -ms-grid-columns: 10px 210px 10px 1fr 10px 61px 10px;
+      grid-template-columns: 10px 210px 10px 1fr 10px 61px 10px;
+}
+
+#bottom-bar #bottom-bar-total {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 6;
+  grid-column: 6;
+  color: white;
+  background: #222222;
+  height: 25px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 12pt;
+}
+
+#bottom-bar #bottom-bar-total #clip-range {
+  width: 100%;
+}
+
+#bottom-bar .control-button .control-button-image {
+  display: unset;
+}
+
+#bottom-bar .control-button .control-button-hover-image {
+  display: none;
+}
+
+#bottom-bar .control-button:hover {
+  cursor: pointer;
+}
+
+#bottom-bar .control-button:hover .control-button-image {
+  display: none;
+}
+
+#bottom-bar .control-button:hover .control-button-hover-image {
+  display: unset;
+}
+
+#bottom-bar .control-button:active {
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: scale(0.96);
+          transform: scale(0.96);
+}
+
+#bottom-bar #media-player {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+  -ms-grid-columns: 23px 23px 23px 23px 23px 23px 23px;
+      grid-template-columns: 23px 23px 23px 23px 23px 23px 23px;
+}
+
+#bottom-bar #media-player #start-key {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+#bottom-bar #media-player #prev-frame {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#bottom-bar #media-player #first-key {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+#bottom-bar #media-player #rev-key {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 4;
+  grid-column: 4;
+}
+
+#bottom-bar #media-player #fwd-key {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 5;
+  grid-column: 5;
+}
+
+#bottom-bar #media-player #next-key {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 6;
+  grid-column: 6;
+}
+
+#bottom-bar #media-player #next-frame {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 7;
+  grid-column: 7;
+}
+
+#bottom-bar #media-player #end-key {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 8;
+  grid-column: 8;
+}
+
+#bottom-bar #range-selector {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 4;
+  grid-column: 4;
+  background: #222222;
+  width: 100%;
+  height: calc(100% - 20px);
+  margin: 10px 0;
+  position: relative;
+}
+
+#bottom-bar #range-selector #range-scrollbar {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #666666;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+  -ms-grid-columns: 20px auto 1fr auto 20px;
+      grid-template-columns: 20px auto 1fr auto 20px;
+  color: #222222;
+  font-family: 'acumin-pro-condensed';
+  font-size: 14px;
+  min-width: 70px;
+}
+
+#bottom-bar #range-selector #range-scrollbar #left-handle {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+#bottom-bar #range-selector #range-scrollbar #right-handle {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 5;
+  grid-column: 5;
+}
+
+#bottom-bar #range-selector #range-scrollbar #from-key {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+#bottom-bar #range-selector #range-scrollbar #to-key {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+#bottom-bar #range-selector #range-scrollbar .handle {
+  width: 20px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#bottom-bar #range-selector #range-scrollbar .handle img {
+  pointer-events: none;
+}

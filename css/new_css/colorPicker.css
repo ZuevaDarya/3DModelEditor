@@ -1,0 +1,267 @@
+.color-picker-container {
+  width: 320px;
+  height: 300px;
+  background-color: white;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 50% 50px 60px 40px 1fr auto;
+      grid-template-rows: 50% 50px 60px 40px 1fr auto;
+  font-family: "acumin-pro-condensed";
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.color-picker-container.with-hints {
+  height: 380px;
+}
+
+.color-picker-container .color-picker-saturation {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.color-picker-container .color-picker-saturation .color-picker-saturation-white {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  background: -webkit-gradient(linear, left top, right top, from(#fff), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+}
+
+.color-picker-container .color-picker-saturation .color-picker-saturation-black {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  background: -webkit-gradient(linear, left bottom, left top, from(#000), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+}
+
+.color-picker-container .color-picker-saturation .color-picker-saturation-cursor {
+  pointer-events: none;
+  width: 4px;
+  height: 4px;
+  -webkit-box-shadow: 0 0 0 1.5px #fff, inset 0 0 1px 1px rgba(0, 0, 0, 0.3), 0 0 1px 2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 0 1.5px #fff, inset 0 0 1px 1px rgba(0, 0, 0, 0.3), 0 0 1px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  -webkit-transform: translate(-2px, -2px);
+          transform: translate(-2px, -2px);
+  position: absolute;
+}
+
+.color-picker-container .color-picker-hue {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  display: -ms-grid;
+  display: grid;
+  margin: 10px;
+  -ms-grid-columns: 24% 76%;
+      grid-template-columns: 24% 76%;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+}
+
+.color-picker-container .color-picker-hue .color-picker-hue-color {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+
+.color-picker-container .color-picker-hue .color-picker-hue-slider {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 16px;
+  position: relative;
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(#f00), color-stop(17%, #ff0), color-stop(33%, #0f0), color-stop(50%, #0ff), color-stop(67%, #00f), color-stop(83%, #f0f), to(#f00));
+  background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+  background: -webkit-linear-gradient(to right, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+}
+
+.color-picker-container .color-picker-hue .color-picker-hue-slider .color-picker-hue-cursor {
+  pointer-events: none;
+  width: 8px;
+  height: 18px;
+  -webkit-transform: translate(-4px, -2px);
+          transform: translate(-4px, -2px);
+  background-color: #f8f8f8;
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+          box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  position: absolute;
+}
+
+.color-picker-container .color-picker-component {
+  display: -ms-grid;
+  display: grid;
+  margin: 5px;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
+}
+
+.color-picker-container .color-picker-component .color-picker-component-value {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  margin-bottom: 4px;
+}
+
+.color-picker-container .color-picker-component .color-picker-component-value input {
+  width: 50px;
+}
+
+.color-picker-container .color-picker-component .color-picker-component-label {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  color: black;
+}
+
+.color-picker-container .color-picker-rgb {
+  -ms-grid-row: 3;
+  grid-row: 3;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  display: -ms-grid;
+  display: grid;
+  margin: 10px;
+  -ms-grid-columns: 20% 6.66% 20% 6.66% 20% 6.66% 20%;
+      grid-template-columns: 20% 6.66% 20% 6.66% 20% 6.66% 20%;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+}
+
+.color-picker-container .red {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+.color-picker-container .green {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+.color-picker-container .blue {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 5;
+  grid-column: 5;
+}
+
+.color-picker-container .alpha {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 7;
+  grid-column: 7;
+}
+
+.color-picker-container .alpha.grayed {
+  opacity: 0.5;
+}
+
+.color-picker-container .color-picker-hex {
+  -ms-grid-row: 4;
+  grid-row: 4;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 80%;
+      grid-template-columns: 20% 80%;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+}
+
+.color-picker-container .color-picker-hex .color-picker-hex-label {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  margin-left: 10px;
+  color: black;
+}
+
+.color-picker-container .color-picker-hex .color-picker-hex-value {
+  -ms-grid-column-align: left;
+      justify-self: left;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.color-picker-container .color-picker-hex .color-picker-hex-value input {
+  width: 70px;
+}
+
+.color-picker-container .color-picker-warning {
+  color: black;
+  font-size: 11px;
+  padding: 4px;
+  -ms-grid-column-align: left;
+      justify-self: left;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-row: 6;
+  grid-row: 6;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}

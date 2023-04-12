@@ -1,0 +1,25 @@
+#nme-log-console {
+  background: #333333;
+  height: 120px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+#nme-log-console .log {
+  color: white;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#nme-log-console .log.error {
+  color: red;
+}

@@ -1,0 +1,158 @@
+.animationBar {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  min-height: 30px;
+  height: var(--footer-height);
+  background-color: var(--footer-background);
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*Chrome -webkit */
+  /** FireFox -moz */
+  /** IE -ms */
+}
+
+.animationBar * {
+  padding: 0px;
+  margin: 0px;
+}
+
+.animationBar .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 10;
+      -ms-flex-positive: 10;
+          flex-grow: 10;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.animationBar #playBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: var(--footer-height);
+  width: var(--footer-height);
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.animationBar #playBtn img {
+  width: var(--footer-height);
+  height: var(--footer-height);
+}
+
+.animationBar #playBtn:hover {
+  background-color: var(--button-hover-color);
+}
+
+.animationBar #playBtn:active {
+  background-color: var(--button-hover-background);
+}
+
+.animationBar #playBtn:focus {
+  outline: none !important;
+  border: none;
+}
+
+.animationBar .slider {
+  -webkit-appearance: none;
+  cursor: pointer;
+  width: 100%;
+  max-width: 820px;
+  height: var(--footer-height);
+  outline: none;
+  margin-left: 20px;
+  margin-right: 10px;
+  background-color: transparent;
+}
+
+.animationBar .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: var(--footer-background);
+  margin-top: -10px;
+}
+
+.animationBar .slider::-webkit-slider-runnable-track {
+  height: 2px;
+  -webkit-appearance: none;
+  background-color: white;
+}
+
+.animationBar .slider::-moz-range-progress {
+  background-color: white;
+  height: 2px;
+}
+
+.animationBar .slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: var(--footer-background);
+}
+
+.animationBar .slider::-moz-range-track {
+  background: white;
+  height: 2px;
+}
+
+.animationBar .slider::-ms-track {
+  height: 2px;
+  /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+  background: transparent;
+  /*leave room for the larger thumb to overflow with a transparent border */
+  border-color: transparent;
+  border-width: 10px 0;
+  /*remove default tick marks*/
+  color: transparent;
+}
+
+.animationBar .slider::-ms-fill-lower {
+  background: white;
+  border-radius: 5px;
+}
+
+.animationBar .slider::-ms-fill-upper {
+  background: white;
+  border-radius: 5px;
+}
+
+.animationBar .slider::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: var(--footer-background);
+  margin-top: 0px;
+}
+
+@media (max-width: 768px) {
+  .animationBar {
+    margin-left: 0;
+  }
+}

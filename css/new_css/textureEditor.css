@@ -1,0 +1,344 @@
+#texture-editor {
+  height: 100%;
+  width: 100%;
+  color: white;
+  background-color: #1e1e1e;
+  font-family: 'acumin-pro-condensed';
+}
+
+#texture-editor .icon {
+  width: 40px;
+  height: 40px;
+}
+
+#texture-editor .icon.button {
+  background-color: #333333;
+}
+
+#texture-editor .icon.button:hover {
+  background-color: #4a4a4a;
+  cursor: pointer;
+}
+
+#texture-editor .icon.button.active {
+  background-color: #666666;
+}
+
+#texture-editor .icon.button:active {
+  background-color: #837c7c;
+}
+
+#texture-editor .has-tooltip {
+  display: inline-block;
+}
+
+#texture-editor .has-tooltip .tooltip {
+  visibility: hidden;
+  background-color: white;
+  z-index: 1;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  line-height: normal;
+  font-size: 14px;
+  padding: 0px 5px;
+  color: black;
+}
+
+#texture-editor .has-tooltip:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+#texture-editor #properties {
+  width: 100%;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #333333;
+}
+
+#texture-editor #properties .tab {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 40px;
+  height: 40px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  border-right: 2px solid #1e1e1e;
+  background-color: #333333;
+}
+
+#texture-editor #properties #left {
+  overflow: hidden;
+  height: 40px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#texture-editor #properties #left #dimensions-tab form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#texture-editor #properties #left #dimensions-tab label {
+  margin-left: 15px;
+  font-size: 15px;
+  color: #afafaf;
+}
+
+#texture-editor #properties #left #dimensions-tab label input {
+  width: 40px;
+  height: 24px;
+  background-color: #000000;
+  color: #ffffff;
+  border: 0;
+  font-size: 12px;
+  text-align: 'left';
+  font-family: 'acumin-pro-condensed';
+  font-size: 15px;
+  padding-left: 8px;
+}
+
+#texture-editor #properties #left #dimensions-tab label:last-of-type {
+  margin-right: 8px;
+}
+
+#texture-editor #properties #right-tab {
+  margin-right: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+#texture-editor #properties #right-tab input[type="file"] {
+  display: none;
+}
+
+#texture-editor #properties .pixel-data {
+  width: 45px;
+  color: #afafaf;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 15px;
+}
+
+#texture-editor #properties .pixel-data:first-of-type {
+  margin-left: 15px;
+}
+
+#texture-editor #properties .pixel-data:last-of-type {
+  padding-right: 15px;
+}
+
+#texture-editor #properties .pixel-data .value {
+  display: inline-block;
+  width: 30px;
+  color: white;
+}
+
+#texture-editor #toolbar {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+#texture-editor #toolbar #tools {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#texture-editor #toolbar #add-tool {
+  position: relative;
+}
+
+#texture-editor #toolbar #add-tool #add-tool-popup {
+  background-color: #333333;
+  width: 348px;
+  margin-left: 40px;
+  position: absolute;
+  top: 0px;
+  height: 40px;
+  padding-left: 4px;
+  line-height: 40px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#texture-editor #toolbar #add-tool #add-tool-popup button {
+  background: #222222;
+  border: 1px solid #337ab7;
+  margin: 5px 10px 5px 10px;
+  color: white;
+  padding: 4px 5px;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+#texture-editor #toolbar #color {
+  margin-top: 8px;
+}
+
+#texture-editor #toolbar #color #active-color-bg {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  position: relative;
+  background-image: linear-gradient(45deg, #808080 25%, transparent 25%), linear-gradient(-45deg, #808080 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #808080 75%), linear-gradient(-45deg, transparent 75%, #808080 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+#texture-editor #toolbar #color #active-color {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+#texture-editor #toolbar #color-picker {
+  position: absolute;
+  margin-left: 40px;
+}
+
+#texture-editor #channels-bar {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 80px;
+  background: #666666;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#texture-editor #channels-bar .channel {
+  color: white;
+  border-bottom: 2px solid #232323;
+  width: 80px;
+  height: 40px;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#texture-editor #channels-bar .channel.uneditable {
+  background: #333333;
+}
+
+#texture-editor #channels-bar .channel:hover {
+  cursor: pointer;
+}
+
+#texture-editor #channels-bar .channel:last-of-type {
+  border-bottom: none;
+}
+
+#texture-editor #canvas-ui {
+  width: 100%;
+  height: calc(100% - 70px);
+  outline: none;
+}
+
+#texture-editor #tool-ui {
+  background-color: #333;
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+}
+
+#texture-editor #tool-ui label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#texture-editor #tool-ui input[type='range'] {
+  background: #d3d3d3;
+}
+
+#texture-editor #bottom-bar {
+  height: 30px;
+  width: 100%;
+  background-color: #333333;
+  font-size: 14px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  line-height: 30px;
+  position: relative;
+}
+
+#texture-editor #bottom-bar #file-url {
+  left: 30px;
+  position: absolute;
+}
+
+#texture-editor #bottom-bar #mip-level {
+  right: 30px;
+  position: absolute;
+}
